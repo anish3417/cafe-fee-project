@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    .container-fluid{
+    background-color: rgb(67, 149, 167);
+  }
+  .hero{
+    /* background-color: rgb(67, 149, 167); */
+    background-image:url('cloud.jpg');
+      color: #black;
+      padding: 100px 20px;
+      text-align: center;
+  }
+  .hero img{
+    margin-top: -40px;
+    width: 400px;
+    height: 200px; 
+    margin-bottom: 30px;
+  }
+  .hero p {
+      font-size: 24px;
+      margin-bottom: 50px;
+      font-family: 'Courier New', Courier, monospace;
+      
+    }
+    .cta-button {
+      background-color: #42473f;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #555;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      
+    }
+
+    footer p {
+      margin: 0.10;
+      font-size:medium;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin-top: 20px;
+}
+
+.icon {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* Icon color */
+    background-color: #333; /* Background color */
+    border-radius: 50%; /* Round shape */
+    padding: 10px; /* Spacing around icon */
+    margin: 0 10px; /* Space between icons */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.icon:hover {
+    background-color: #555; /* Change background on hover */
+}
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+.menu-trigger {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 999; }
+  .menu-trigger span {
+    height: 5px;
+    width: 30px;
+    background: #222222;
+    display: block;
+    margin: 4px;
+    border-radius: 2px; }
+  @media (max-width: 1920px) {
+    .menu-trigger {
+      display: none; } }
+  @media (max-width: 570px) {
+    .menu-trigger {
+      display: block;
+      background: #fff;
+      padding: 10px; } }
+
+.fixed-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  width: 150px;
+  background: #fff;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  box-shadow: -6px 0px 20px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+  @media (max-width: 570px) {
+    .fixed-menu {
+      margin-right: -150px; } }
+  .fixed-menu.active {
+    margin-right: 0px; }
+  .fixed-menu .menu-close {
+    padding: 5px 15px;
+    display: inline-block;
+    cursor: pointer; }
+    @media (max-width: 1920px) {
+      .fixed-menu .menu-close {
+        display: none; } }
+    @media (max-width: 570px) {
+      .fixed-menu .menu-close {
+        display: block; } }
+    .fixed-menu .menu-close i {
+      font-size: 25px; }
+  .fixed-menu .menu-header {
+    padding: 30px 0; }
+  .fixed-menu .nav-wraper .navbar {
+    padding: 0; }
+    .fixed-menu .nav-wraper .navbar .navbar-nav {
+      width: 100%; }
+      .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item {
+        display: block; }
+        .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item.submenu .dropdown-menu {
+          border: none;
+          margin-left: 30px; }
+          .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item.submenu .dropdown-menu .nav-item {
+            padding: 0; }
+        .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item .nav-link {
+          color: #000000;
+          text-transform: capitalize;
+          font-size: 12px;
+          padding: 10px 0px 10px 20px;
+          display: block;
+          text-align: left;
+          -webkit-transition: all 0.3s ease 0s;
+          -moz-transition: all 0.3s ease 0s;
+          -o-transition: all 0.3s ease 0s;
+          transition: all 0.3s ease 0s; }
+          .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item .nav-link img {
+            padding-right: 15px;
+            -webkit-transition: all 0.3s ease 0s;
+            -moz-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s; }
+          .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item .nav-link:hover, .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item .nav-link.active {
+            background: #42473f;
+            color: #fff;
+            box-shadow: 0 20px 20px rgba(244, 47, 44, 0.1); }
+            .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item .nav-link:hover img, .fixed-menu .nav-wraper .navbar .navbar-nav .nav-item .nav-link.active img {
+              filter: brightness(0) invert(1);
+              -o-filter: brightness(0) invert(1);
+              -ms-filter: brightness(0) invert(1);
+              -moz-filter: brightness(0) invert(1);
+              -webkit-filter: brightness(0) invert(1); }
+
+              .reservation-area {
+  background: url(../img/reservation-bg.jpg) center no-repeat;
+  background-size: cover;
+  max-height: 600px;
+  margin-bottom: 150px; 
+  }
+  
+  .reservation-area .contact-form-section {
+    background: #fff;
+    text-align: center;
+    padding: 70px 50px;
+    
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); }
+    .reservation-area .contact-form-section h1 {
+      font-size: 36px;
+      margin-bottom: 20px; }
+    .reservation-area .contact-form-section .contact-form-area .form-group {
+      position: relative; }
+      .reservation-area .contact-form-section .contact-form-area .form-group .ui-datepicker-trigger {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        cursor: pointer; }
+    .reservation-area .contact-form-section .contact-form-area .form-control {
+      border: 0;
+      border-bottom: 1px solid #eeeeee;
+      padding: 25px 20px;
+      font-size: 13px; }
+      .reservation-area .contact-form-section .contact-form-area .form-control:focus {
+        outline: none;
+        box-shadow: none; }
+    .reservation-area .contact-form-section .primary-btn {
+      margin-top: 20px; }
+    .reservation-area .contact-form-section .form-select .nice-select {
+      padding: 0px;
+      background: transparent !important;
+      padding-left: 20px;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+      height: 50px; }
+      .reservation-area .contact-form-section .form-select .nice-select .list .option.selected {
+        color: #f42f2c; }
+      .reservation-area .contact-form-section .form-select .nice-select .list .option:hover {
+        color: #f42f2c; }
+    @media (max-width: 340px) {
+      .reservation-area .contact-form-section .primary-btn {
+        padding: 0 25px; } }
+
+#book-table .reservation-area {
+  margin-top: 150px; }
+  @media (max-width: 991px) {
+    #book-table .reservation-area {
+      margin-top: 80px; } }
+
+      .photo {
+    background-color: rgb(90, 88, 84);
+    height: 100px;
+    position: relative;
+    
+    }   
+
+    .nav-link {
+        padding-top: 15px;
+        color: #000;
+        font-weight: 600;
+        font-size: larger;
+    }
+
+
+   
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(95, 82, 64);
+  
+
+}
+
+.header {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.anish {
+  padding: 20px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.button {
+  background-color: rgb(90, 88, 84);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+.navigation a:hover {
+  background-color: #4CAF50;
+  color: rgb(90, 88, 84);
+}
+
+
+</style>
+<header>
+    
+ <div class="photo">
+    <img src="logo2.png" alt="Logo" width="160" height="90" class="d-inline-block align-text-top">
+    <div class="new">
+    <ul class="nav justify-content-end" >
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="menu.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact us.html">Contact Us</a>
+        </li>
+       
+        
+      </ul>
+    </div>
+    </div>
+</header>
+<body>
+    
+                            <center>
+							<h1 style="color: white;">Online Order</h1>
+							<p style="color: white;">Enjoy the convenience of online ordering at Cafe Cloud Nine! Browse our delicious menu from the comfort of your home or on the go. Whether you're craving a freshly brewed coffee, a delectable pastry, or a hearty meal, we’ve got you covered.</p>
+                            </center>
+						</div>
+						<div class="col-lg-5 col-md-12">
+							<div class="page-link-wrap">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        
+		<section class="reservation-area section_gap_top">
+			<div class="container">
+				<div class="row align-items-center justify-content-center">
+					<div >
+						<div class="contact-form-section">
+                            
+							<h1>Your Order Here</h1>
+							<form class="contact-form-area contact-page-form contact-form text-right" id="myForm" action="mail.html" method="post">
+								<div class="form-group col-md-12">
+									<input type="text" class="form-control" id="Full Name" name="FullName" placeholder="Full Name" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Full Name'">
+								</div>
+								<div class="form-group col-md-12">
+									<input type="email" class="form-control" id="email" name="email" placeholder="Email Address" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Email Address'">
+								</div>
+								<div class="form-group col-md-12">
+									<input type="text" class="form-control" id="subject" name="subject" placeholder="Phone Number" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Phone Number'">
+								</div>
+                                <div class="form-group col-md-12">
+									<input type="address" class="form-control" id="email" name="address" placeholder="Complete Address" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Complete Address'">
+								</div>
+                                <div class="form-group col-md-12">
+									<input type="text" class="form-control" id="Order" name="FullName" placeholder="Any Specification About Order" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Any Specification About Order'">
+								</div>
+								<div class="form-group col-md-12">
+									<div class="form-select">
+										<select>
+											<option value="1">Cafe Items</option>
+											<option value="2">Cappuccino - 450</option>
+											<option value="3">Caramel Macchiato - 500</option>
+											<option value="4">Iced Latte - 440</option>
+											<option value="5">Mocha - 530</option>
+                                            <option value="6">Paneer Tikka Burger - 300</option>
+                                            <option value="7">Pasta Pizza - 470</option>
+                                            <option value="8">Red Sauce Pasta - 430</option>
+                                            <option value="9">Tacos - 350</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<input type="text" class="form-control" id="datepicker" name="text" placeholder="Select Place" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Select Date & Time'">
+								</div>
+								<div class="form-group col-md-12">
+									<div class="form-select">
+										<select>
+											<option value="1">Select Place</option>
+											<option value="2">Saket</option>
+											<option value="3">Hauz Khas</option>
+											<option value="4">Saket</option>
+											<option value="5">Cannaught Place</option>
+                                            <option value="6">Malviya Nagar</option>
+                                            <option value="7">Kashmere Gate</option>
+                                            <option value="8">Punjabi Bagh</option>
+                                            <option value="9">Sarojini Nagar</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-12 text-center">
+									<a href="menu.html"><button class="primary-btn text-uppercase">Complete Order</button></a>
+								</div>
+							</form>
+                        
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    
+		
+
+		
+
+    <footer>
+        <p>LIKE, SHARE, REPEAT</p>
+        <div class="text">
+         <p style="font-family:fantasy; font-size: larger; font-size: xx-large;"> Connect with us ! </p>
+        </div>
+    
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank" class="icon facebook" ><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.pinterest.com" target="_blank" class="icon pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+      
+      <div class="footer_section layout_padding" style="background-color:  rgb(70, 69, 67) ; height: 400px;">
+        <br><br><br><br><br><br>
+        <div class="container" style="color: #fff;">
+           <div class="row">
+              <div class="col-lg-3 col-sm-6">
+                 <h3 class="useful_text">About</h3>
+                 <p class="footer_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation u</p>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                 <h3 class="useful_text">Menu</h3>
+                 <div class="footer_menu" style="text-decoration: none;">
+                    <ul>
+                       <li><a href="index.html" style="text-decoration: none;color: #f0f0f0;">Home</a></li>
+                      
+                       <li><a href="gallery.html" style="text-decoration: none;color: #f0f0f0;">Gallery</a></li>
+                      
+                       <li><a href="contact.html"style="text-decoration: none;color: #f0f0f0;">Contact Us</a></li>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                 <h1 class="useful_text">Opening</h1>
+                 <p class="dummy_text">Monday - Saturday
+                    09AM - 09PM
+                    
+                    Sunday
+                    10AM - 08PM</p>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                 <h1 class="useful_text">Contact Us</h1>
+                 <div class="location_text">
+                    <ul>
+                       <li>
+                    
+                          <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Address : Loram Ipusm</span>
+                          
+                       </li>
+                       <li>
+                          
+                          <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call : +01 1234567890</span>
+                        
+                       </li>
+                       <li>
+                          
+                          <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email : demo@gmail.com</span>
+                          
+                       </li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+    
+     <div class="copyright_section">
+        <div class="container" >
+           <p class="copyright_text" ><h3 style="color: #fff;"> 2024 All Rights Reserved.</h3></a></p>
+        </div>
+     </div>
+      </footer>
+    
+</body>
+</html>
